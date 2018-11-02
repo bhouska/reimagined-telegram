@@ -6,12 +6,12 @@ import selectExpensesTotal from '../../selectors/expenses-total';
 
 test('should render correctly with 1 expense', () => {
     const expenseTotal = selectExpensesTotal([expenses[0]]);
-    const wrapper = shallow(<ExpensesSummary expenses={[expenses[0]]} expenseCount={1} expenseTotal={expenseTotal} />);
+    const wrapper = shallow(<ExpensesSummary expenseCount={1} expenseTotal={expenseTotal} />);
     expect(wrapper).toMatchSnapshot();
 });
 
 test('should render correctly with multiple expenses', () => {
     const expenseTotal = selectExpensesTotal(expenses);
-    const wrapper = shallow(<ExpensesSummary expenses={expenses} expenseCount={expenses.length} expenseTotal={expenseTotal} />);
+    const wrapper = shallow(<ExpensesSummary expenseCount={expenses.length} expenseTotal={expenseTotal} />);
     expect(wrapper).toMatchSnapshot();
 });
